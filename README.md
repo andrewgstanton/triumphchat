@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+## Steps to Run Triump Chat Box
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Install npm on your machine (npm install -g npm on command line to update to the latest version or use this https://docs.npmjs.com/cli/v7/configuring-npm/install to install from scratch on your machine).
+2. clone this repo to your local filesystem (git clone https://github.com/andrewgstanton/triumphchat.git)
+6. cd to the place in your local filesystem where you cloned triumphchat (cd ~/triumphchat)
+7. install node_modules with all dependencies (npm install)
+8. run the application (npm start)
+9. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Available Scripts
+## Technical Overview
 
-In the project directory, you can run:
+1. This simulates a real-time chat room but is not connected to any apis or external databases. 
+2. You enter your username to "join" the chat.  
+3. Random messages will appear from other users once you join the chatroom.
+4. You can send a message once you enter the chat room and it will be seen in the list of messages sorted by timestamp.  
+5. Your messages will be color coded with "green" and those of others in the chatroom "blue" to make it easier to see your messages
+6. To exit the chatroom, click "Exit Chatroom"
 
-### `npm start`
+8. I created an initial react app bootstrapped with "Create React App" (https://github.com/facebook/create-react-app) to create a basic react app and added two modules:
+  - JoinChat.js to join the chat 
+  - SendMessage.js to send mesages to the chat. This module also generates a list of random messages and prepends them to the chat message history when you first join the chat.  It also generates a random message from another user whenever you send a message to simulate others joining and posting messages while you are using the service.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Areas to optimize or improve
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. tie this to a real database to store the messages and usernaes  This is more involved.  You would also need a way to authenticate and manage users logins with tokens in
+2. If you still wanted to make this a simulated system you could also write a listener and handler that generates random messages periodically and add thsm to the chat room while you are in the chat room (maybe you could trigger it run every 5 min)
 
-### `npm test`
+## Time spent building this app 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. 6/8/2023 -- approx 5 hours running the bootstrap and writing the two modules
+2. 6/9/2023 -- approx 1 hour getting it deployed to github and validating I can run through all the steps above to run the application
